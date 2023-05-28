@@ -29,8 +29,6 @@ sudo sysctl -w vm.max_map_count=1048575
 
 -   Содержание файла .env:
 
-```{=html}
-<!-- -->
 ```
         OPENCTI_ADMIN_EMAIL=admin\@opencti.io
 
@@ -61,13 +59,12 @@ sudo sysctl -w vm.max_map_count=1048575
         SMTP_HOSTNAME=localhost
 
         ELASTIC_MEMORY_SIZE=4G
+```         
 
 3\. В этой же директории создан файл docker-compose.yml
 
 -   Запуск контейнера с помощью команды:
 
-```{=html}
-<!-- -->
 ```
         sudo docker-compose up -d
 
@@ -117,18 +114,19 @@ sudo sysctl -w vm.max_map_count=1048575
         Creating lab4_worker_2 ... done
 
         Creating lab4_worker_1 ... done
+``` 
 
 4.  Заходим в веб-интерфейс OpenCTI \\\`localhost:8088\\\`
 
 Входим по данным пользователя:
 
-![](images/image-2018839537.png)
+![image](https://github.com/artem12786/SAZA/assets/77270613/1c4b221c-3086-4ffc-8bec-7376309396be)
 
 5\. Попадаем на главную страницу
 
-![](images/image-385942215.png)
+![image](https://github.com/artem12786/SAZA/assets/77270613/2a3aa082-f753-44c0-82c0-c476a2cc1862)
 
-6\. Далее используем данный код через оболочку Python внутри контейнера pr4_opencti_1 для импорта данных из файла hosts.txt
+6\. Далее используем данный код для импорта данных из файла hosts.txt
 
 ```{python}
 import stix2
@@ -163,13 +161,13 @@ with open('malicious_domains.stix', 'w') as f:
 
 Импортируем данные:
 
-![](images/image-2051502889.png)
+![image](https://github.com/artem12786/SAZA/assets/77270613/e08a659b-0ef0-4c92-b49b-9c57df13c1e0)
 
-![](images/image-744861057.png)
+![image](https://github.com/artem12786/SAZA/assets/77270613/084f1c9b-0c29-4a6c-8546-296ad89ecab7)
 
 В результате не было найдено вредоносных доменов:
 
-![](images/image-645401568.png)
+![image](https://github.com/artem12786/SAZA/assets/77270613/b7a852d9-7d7b-4c56-8369-8c20bbc82038)
 
 ## Оценка результата
 
